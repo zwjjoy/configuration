@@ -42,3 +42,6 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # go
 export PATH="/opt/homebrew/bin:$PATH"
+
+# tmux color
+export TERM="xterm-256color"
