@@ -4,21 +4,23 @@ Dotfiles managed by [chezmoi](https://chezmoi.io). Managed files live in `home/`
 
 ## New machine
 
-```sh
-# install Homebrew first: https://brew.sh
-brew install chezmoi
-chezmoi init --apply zwjjoy/configuration --source ~/Projects/configuration
-```
-
-`apply` also runs `brew bundle` on the `Brewfile` (taps, formulae, casks, npm/go/uv tools).
-
-Then:
-
-- Put secrets back in `~/.secrets/` (not in this repo):
-  - `env.zsh`: shell exports, sourced by `.zprofile`
-  - `openrouter-api-key.txt`: read into `~/.claude/settings.json` when applying
-- Install the tools that don't come from Homebrew: herdr, Claude Code, Codex
-- Run `rtk init -g` and `rtk init -g --agent pi` for the RTK hooks
+1. Install [Homebrew](https://brew.sh), then `brew install chezmoi`.
+2. Copy `~/.secrets/` from another machine (AirDrop, USB). It is not in this repo:
+   - `env.zsh`: shell exports, sourced by `.zprofile`
+   - `openrouter-api-key.txt`: read into `~/.claude/settings.json` when applying
+3. If an old clone of this repo exists, move it aside: `mv ~/Projects/configuration ~/Projects/configuration.old`
+4. Clone, review, apply:
+   ```sh
+   chezmoi init zwjjoy/configuration --source ~/Projects/configuration
+   chezmoi diff     # what will be overwritten in ~
+   chezmoi apply
+   ```
+   `apply` also clones powerlevel10k and nvm, installs Node 22, runs `brew bundle`,
+   installs Claude Code and herdr if missing, and sets up the herdr and rtk hooks.
+5. If `~/AGENTS.md` exists (old layout), merge anything you want into `~/.agents/AGENTS.md`
+   (`diff ~/AGENTS.md ~/.agents/AGENTS.md`), then `rm ~/AGENTS.md`. Otherwise pi loads it twice.
+6. Log in: `gh auth login`, `claude`, `pi` (`/login`), Codex app.
+7. Open a new terminal.
 
 ## Daily use
 

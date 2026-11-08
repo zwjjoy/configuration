@@ -1,0 +1,13 @@
+# Git checkouts that dotfiles depend on. Cloned if missing.
+
+# sourced by .zshrc
+[powerlevel10k]
+type = "git-repo"
+url = "https://github.com/romkatv/powerlevel10k.git"
+clone.args = ["--depth", "1"]
+
+# node via nvm (pi and npm globals in the Brewfile need it)
+[".nvm"]
+type = "git-repo"
+url = "https://github.com/nvm-sh/nvm.git"
+clone.args = ["--depth", "1"]

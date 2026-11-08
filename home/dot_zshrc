@@ -106,3 +106,12 @@ ms() {
   npx markserv --address 0.0.0.0 --port "$port" "$@"
 }
 
+
+# keep the dotfiles Brewfile in sync after installs/removals
+brew() {
+  command brew "$@" || return
+  case "$1" in
+    install|uninstall|remove|rm|tap|untap)
+      command brew bundle dump --force --file="$HOME/Projects/configuration/Brewfile" ;;
+  esac
+}
