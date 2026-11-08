@@ -1,0 +1,31 @@
+{
+  "lastChangelogVersion": "1.4.0",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.6-sol",
+  "defaultThinkingLevel": "high",
+  "enabledModels": [
+    "anthropic/claude-opus-5-5",
+    "openai-codex/gpt-6.1-sol",
+    "anthropic/claude-sonnet-5-5",
+    "deepseek/deepseek-v4-pro",
+    "openrouter/deepseek/deepseek-v4-flash",
+    "openrouter/~deepseek/deepseek-v4-flash-latest",
+    "openrouter/~anthropic/claude-opus-latest",
+    "openrouter/~anthropic/claude-sonnet-latest",
+    "openrouter/z-ai/glm-5.2",
+    "openrouter/anthropic/claude-fable-5",
+    "openrouter/moonshotai/kimi-k3",
+    "openrouter/~anthropic/claude-fable-latest",
+    "openai-codex/gpt-6-astra",
+    "anthropic/claude-fable-5-1"
+  ],
+  "theme": "dark",
+  "packages": [
+    "npm:@gotgenes/pi-anthropic-auth",
+    "npm:@tmustier/pi-queue-steer"
+  ],
+  "hideThinkingBlock": false,
+  "showCacheMissNotices": true,
+  "quietStartup": true,
+  "defaultProjectTrust": "always"
+}
