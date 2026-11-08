@@ -10,5 +10,6 @@ set mouse:a
 set ignorecase
 
 highlight Comment ctermfg=green
-set whichwrap+=<,>,h,l
+set whichwrap+=b,s,<,>,h,l,[,]
+set clipboard=unnamed
 
